@@ -1,8 +1,10 @@
 # Projecte: Sistema complet de Proxmox
 
-## Introducció
-- Amb la Eina Rufus, que crea mitjans d'arranc a partir de ISOs.
+## Pasos previs a la instal·lació
+- Per començar, utilitzarem Rufus per fer que l'USB amb l'imatge de Proxmox dins sigui Bootable.
 
-## Hardware utilitzat:
-- Crucial
-  (Link Image)
+### Hardware utilitzat:
+
+Crucial BX500
+
+![Crucial](img/preview.webp)
