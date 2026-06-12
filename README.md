@@ -5,6 +5,9 @@
 
 ### Hardware utilitzat:
 
-Crucial BX500
+Crucial BX500 240 Gb - Un disc SSD SATA3, amb velocitat de lectura de 540 MB/s. Suficient per al context: laboratori lleuger
 
 ![Crucial](img/preview.webp)
+
+Veure: !(Errors)
+
