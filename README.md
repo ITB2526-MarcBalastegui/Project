@@ -9,7 +9,8 @@ Crucial BX500 240 Gb - Un disc SSD SATA3, amb velocitat de lectura de 540 MB/s. 
 
 ![Crucial](img/preview.webp)
 
-Veure: !(Errors)
+Veure: ![Errors](errors.md)
+
 
 ## Instal·lació
 
