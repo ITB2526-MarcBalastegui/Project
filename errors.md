@@ -12,6 +12,12 @@ L'instal·lador de Proxmox es congelaba al arrencar. La causa era que el process
 
 ### Disc no detectat
 La instal·lació es realitzava correctament al disc seleccionat. El problema apareixia a l'hora del reboot: la BIOS no detectaba el disc, llavors era impossible arrencar Proxmox.
+Al entrar a Windows, utilitzant l'eina `Disk Manager` vaig veure que apareixia el disc però d'una manera incorrecta:
+Sortia "desconegut", sense particions i amb 0B de mida si entràvem a les propietats
+*Nota: `Disc 1*
+
+<img width="802" height="502" alt="image" src="https://github.com/user-attachments/assets/c27a8e2d-b2fd-45fd-8ab0-d8a3ea1b4644" />
+
 #### Solució:
 - Problema del hardware: el cable SATA no funcionava bé (encara que era nou). Al canviar-lo per un altre, si que es va detectar.
   
