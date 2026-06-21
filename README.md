@@ -31,7 +31,11 @@ Per a la ISO, seleccionem la arquitectura amd64 tipus dvd i fem la descàrrega d
 Com OPNSense necessita dos "cares" de la xarxa (WAN, la que apunta a internet, i LAN, la que mira a la xarxa interna), hem de crear una xarxa virtual més. 
 - `vmbr0`: la que ja tenim que farà de WAN i per on OPNSense sortirà a internet.
 - `vmbr1`: nova, sense tarjeta física, intern, que farà de LAN.
-  
+
+### Diagrama de xarxa
+
+El `vtnet0` (WAN) té la ip `192.168.1.18`, assignada pel router mitjançant DHCP. Mentre que el `vtnet1` (LAN) té la ip que hem escrit manualment, `10.10.10.1`
+
 #### Paràmetres
 
 |  | Paràmetres |
@@ -51,3 +55,4 @@ Com OPNSense necessita dos "cares" de la xarxa (WAN, la que apunta a internet, i
 | Balloning Device | No | 
 | Bridge | vmbr0 | 
 | Network Model | VirtIO | 
+
