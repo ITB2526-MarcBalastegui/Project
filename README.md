@@ -18,13 +18,11 @@ Veure: [Errors](Project/errors.md)
 - En Target Harddisk Crucial BX500, amb el sistema de fitxers ext4
 - IP del servidor: `192.168.1.50/24`
 
-## Primera màquina del sistema
+## Primera màquina del sistema: OPNSense
 
 Abans de crear la màquina, haviem de deshabilitar el repositori enterprise, que requereix una suscripció pagada, i afegir el repositori no-subscription, el repo gratuit de Proxmox, vàlid pel que voldrem fer.
 
-### OPNSense
-
-La màquina que farà de router/firewall.
+Aquesta es la màquina que farà de router/firewall.
 Per a la ISO, seleccionem la arquitectura amd64 tipus dvd i fem la descàrrega directa a Proxmox (Opció `Download from URL`)
 
 #### Disseny de la xarxa
