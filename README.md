@@ -25,13 +25,13 @@ Abans de crear la màquina, haviem de deshabilitar el repositori enterprise, que
 Aquesta es la màquina que farà de router/firewall.
 Per a la ISO, seleccionem la arquitectura amd64 tipus dvd i fem la descàrrega directa a Proxmox (Opció `Download from URL`)
 
-#### Disseny de la xarxa
+### Disseny de la xarxa
 
 Com OPNSense necessita dos "cares" de la xarxa (WAN, la que apunta a internet, i LAN, la que mira a la xarxa interna), hem de crear una xarxa virtual més. 
 - `vmbr0`: la que ja tenim que farà de WAN i per on OPNSense sortirà a internet.
 - `vmbr1`: nova, sense tarjeta física, intern, que farà de LAN.
 
-### Diagrama de xarxa
+#### Diagrama de xarxa
 
 El `vtnet0` (WAN) té la ip `192.168.1.18`, assignada pel router mitjançant DHCP. Mentre que el `vtnet1` (LAN) té la ip que hem escrit manualment, `10.10.10.1`
 
@@ -41,7 +41,7 @@ El `vtnet0` (WAN) té la ip `192.168.1.18`, assignada pel router mitjançant DHC
 
 La LAN venía per defecte en `192.168.1.1/24` (Mateix rang que la xarxa física de casa (`192.168.1.X`). Això crea un conflicte d'enrutament ja que un dispositiu no sabria si un destí a `192.168.1.X` està en la xarxa local o a un altre costat de OPNSense. Per això vam canviar la LAN a `10.10.10.1/24`
 
-#### Paràmetres
+### Paràmetres
 
 |  | Paràmetres |
 |-----------|-----------|
@@ -61,14 +61,23 @@ La LAN venía per defecte en `192.168.1.1/24` (Mateix rang que la xarxa física 
 | Bridge | vmbr0 | 
 | Network Model | VirtIO | 
 
-#### Web UI
+### Web UI
 
 Per defecte OPNSense bloqueja l'accès al seu panel web desde la WAN (Mesura de seguretat llògica). 
 Per solucionar-ho: 
 - Desactivem temporalment el firewall, en el shell de la màquina, amb `pfctl -d`
 - Entrem a la Web i creem una regla de firewall en `Firewall -> Rules -> WAN` que permet tràfic  TCP entrant desde 192.168.1.0 fins a la WAN address pel port HTTPS (443).
 - Reactivem el firewall amb `pfctl -e`
-
+  
 (Foto regla)
+
+#### Comprovació del funcionament
+
+Per comprovar que OPNSense assigna IPs i funciona la sortida a internet, crearem una màquina Linux de prova (`Debian 12`)
+
+## Segona màquina del sistema: Windows Server 2022
+
+La màquina server que serà Active Directory
+
 
 OPNSense ja porta per defecte una regla `Default allow LAN to any` que permet a las VMS internes sortir a internet. No necessitem configuració extra
