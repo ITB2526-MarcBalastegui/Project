@@ -55,14 +55,14 @@ La LAN venía per defecte en `192.168.1.1/24` (Mateix rang que la xarxa física 
 | Disk size | 20 GiB | Mida del disc. Amb 20 GiB sobren ja que OPNSense es lleuger | 
 | Sockets | 1 | CPUs físiques simulades | 
 | Cores | 1 | Nuclis per socket | 
-| Type | host | host | 
-| Memory | 2048 MiB | 
-| Balloning Device | No | 
-| Bridge | vmbr0 | 
-| Network Model | VirtIO | 
+| Type | host | Model de CPU que veu la VM. Host significa que la VM veu la CPU real del servidor. Màxim rendiment | 
+| Memory | 2048 MiB | RAM assignada | 
+| Balloning Device | No | Tècinca de gestió dinàmica de RAM. Permet a Proxmoxreclamar RAM  que njo està utilitzant i donarsela auna altra VM que ho necessiti, optimitzant l'ús de la memòria. Tot i que es un concepte molt interessant, la base de OPNSense, FreeBSD no gestiona bé el ballooning i pot donar problemes d'estabilitat | 
+| Bridge | vmbr0 | A quin switch virtual es connecta. Aquest es el bridge connectat a la tarjeta física, sortida a internet | 
+| Network Model | VirtIO | El tipus de tarjeta de xarxa. No emula una tarjeta de xarxa real. Paravirtualitzada, més ràpida |  
 
-Paravirtualització: La VM sap que es una VM i utilitza drivers per parlar directament amb el hipervisor sense fingir hardware real.
-Machine: chipset de la placa base virtual que Proxmox li emula a la VM.
+**Paravirtualització:** La VM sap que es una VM i utilitza drivers per parlar directament amb el hipervisor sense fingir hardware real.
+**Machine:** chipset de la placa base virtual que Proxmox li emula a la VM.
 
 ### Web UI
 
