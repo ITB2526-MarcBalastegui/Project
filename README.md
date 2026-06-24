@@ -43,23 +43,26 @@ La LAN venía per defecte en `192.168.1.1/24` (Mateix rang que la xarxa física 
 
 ### Paràmetres
 
-|  | Paràmetres |
-|-----------|-----------|
-| ID | 100  | 
-| Nom | opnsense | 
-| Machine | Default (1440fx) | 
-| BIOS | Default (SeaBIOS) | 
-| Bus/Device | SCSI | 
-| SCSI Controller | VirtIO SCSI single |
-| Storage | local-lvm | 
-| Disk size | 20 GiB | 
-| Sockets | 1 | 
-| Cores | 1 | 
-| Type | host | 
+|  | Paràmetres |    |
+|-----------|-----------|-----------|
+| ID | 100  | Identificador |
+| Nom | opnsense | Nom | 
+| Machine | Default (1440fx) | Machine* clàssic, molt compatible i senzill, suficient per a un router. |
+| BIOS | Default (SeaBIOS) | Firmware que arrenca la VM. BIOS clàsic/legacy. Igual, simple i compatible. |
+| Bus/Device | SCSI | Tipus de controladora a la que es connecta el Virtual Disk. Aquesta es la opció recomanada. |
+| SCSI Controller | VirtIO SCSI single | Model de controladora SCSI que s'emula. En paravirtualització* (Més ràpid)|
+| Storage | local-lvm | On es guarda físicament el disc virtual de la VM |
+| Disk size | 20 GiB | Mida del disc. Amb 20 GiB sobren ja que OPNSense es lleuger | 
+| Sockets | 1 | CPUs físiques simulades | 
+| Cores | 1 | Nuclis per socket | 
+| Type | host | host | 
 | Memory | 2048 MiB | 
 | Balloning Device | No | 
 | Bridge | vmbr0 | 
 | Network Model | VirtIO | 
+
+Paravirtualització: La VM sap que es una VM i utilitza drivers per parlar directament amb el hipervisor sense fingir hardware real.
+Machine: chipset de la placa base virtual que Proxmox li emula a la VM.
 
 ### Web UI
 
