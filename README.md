@@ -73,7 +73,8 @@ Per solucionar-ho:
 - Entrem a la Web i creem una regla de firewall en `Firewall -> Rules -> WAN` que permet tràfic  TCP entrant desde 192.168.1.0 fins a la WAN address pel port HTTPS (443).
 - Reactivem el firewall amb `pfctl -e`
   
-(Foto regla)
+<img width="1589" height="480" alt="image" src="https://github.com/user-attachments/assets/131b2f5e-5fc9-4bd5-ab7f-5e4bfe7f422e" />
+
 
 #### Comprovació del funcionament
 
