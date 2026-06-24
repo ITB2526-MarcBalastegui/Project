@@ -1,4 +1,4 @@
-# Projecte: Sistema complet de Proxmox
+# Projecte: Sistema complet de Proxmox (EN PROGRÉS)
 
 ## Pasos previs a la instal·lació
 - Per començar, utilitzarem Rufus per fer que l'USB amb l'imatge de Proxmox dins sigui Bootable.
