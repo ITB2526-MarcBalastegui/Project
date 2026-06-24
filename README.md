@@ -45,8 +45,8 @@ La LAN venía per defecte en `192.168.1.1/24` (Mateix rang que la xarxa física 
 
 |  | Paràmetres |    |
 |-----------|-----------|-----------|
-| ID | 100  | Identificador |
-| Nom | opnsense | Nom | 
+| ID | 100  |  |
+| Nom | opnsense |  | 
 | Machine | Default (1440fx) | Machine* clàssic, molt compatible i senzill, suficient per a un router. |
 | BIOS | Default (SeaBIOS) | Firmware que arrenca la VM. BIOS clàsic/legacy. Igual, simple i compatible. |
 | Bus/Device | SCSI | Tipus de controladora a la que es connecta el Virtual Disk. Aquesta es la opció recomanada. |
