@@ -62,6 +62,7 @@ La LAN venía per defecte en `192.168.1.1/24` (Mateix rang que la xarxa física 
 | Network Model | VirtIO | El tipus de tarjeta de xarxa. No emula una tarjeta de xarxa real. Paravirtualitzada, més ràpida |  
 
 **Paravirtualització:** La VM sap que es una VM i utilitza drivers per parlar directament amb el hipervisor sense fingir hardware real.
+
 **Machine:** chipset de la placa base virtual que Proxmox li emula a la VM.
 
 ### Web UI
