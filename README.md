@@ -43,7 +43,7 @@ La LAN venía per defecte en `192.168.1.1/24` (Mateix rang que la xarxa física 
 
 ### Paràmetres
 
-|  | Paràmetres |    |
+| Paràmetres | Selecció | Explicació |
 |-----------|-----------|-----------|
 | ID | 100  |  |
 | Nom | opnsense |  | 
