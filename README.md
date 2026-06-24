@@ -39,6 +39,10 @@ El `vtnet0` (WAN) té la ip `192.168.1.18`, assignada pel router mitjançant DHC
 
 ![Diagrama xarxa](img/diagrama-xarxa.png)
 
+#### Conflicte de subxarxa
+
+La LAN venía per defecte en `192.168.1.1/24` (Mateix rang que la xarxa física de casa (`192.168.1.X`). Això crea un conflicte d'enrutament ja que un dispositiu no sabria si un destí a `192.168.1.X` està en la xarxa local o a un altre costat de OPNSense. Per això vam canviar la LAN a `10.10.10.1/24`
+
 #### Paràmetres
 
 |  | Paràmetres |
@@ -59,3 +63,14 @@ El `vtnet0` (WAN) té la ip `192.168.1.18`, assignada pel router mitjançant DHC
 | Bridge | vmbr0 | 
 | Network Model | VirtIO | 
 
+#### Web UI
+
+Per defecte OPNSense bloqueja l'accès al seu panel web desde la WAN (Mesura de seguretat llògica). 
+Per solucionar-ho: 
+- Desactivem temporalment el firewall, en el shell de la màquina, amb `pfctl -d`
+- Entrem a la Web i creem una regla de firewall en `Firewall -> Rules -> WAN` que permet tràfic  TCP entrant desde 192.168.1.0 fins a la WAN address pel port HTTPS (443).
+- Reactivem el firewall amb `pfctl -e`
+
+(Foto regla)
+
+OPNSense ja porta per defecte una regla `Default allow LAN to any` que permet a las VMS internes sortir a internet. No necessitem configuració extra
