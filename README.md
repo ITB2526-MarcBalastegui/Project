@@ -33,7 +33,7 @@ Com OPNSense necessita dos "cares" de la xarxa (WAN, la que apunta a internet, i
 
 #### Diagrama de xarxa
 
-El `vtnet0` (WAN) té la ip `192.168.1.18`, assignada pel router mitjançant DHCP. Mentre que el `vtnet1` (LAN) té la ip que hem escrit manualment, `10.10.10.1`
+El `vtnet0` (WAN) té la ip `192.168.1.20`, assignada pel router mitjançant DHCP. Mentre que el `vtnet1` (LAN) té la ip que hem escrit manualment, `10.10.10.1`
 
 ![Diagrama xarxa](img/diagrama-xarxa.png)
 
