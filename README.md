@@ -78,7 +78,7 @@ Per solucionar-ho:
 
 #### Comprovació del funcionament
 
-Per comprovar que OPNSense assigna IPs i funciona la sortida a internet, crearem una màquina Linux de prova (`Debian 12`)
+Per comprovar que OPNSense assigna IPs i funciona la sortida a internet, crearem una màquina Linux de prova (`Debian 13`)
 
 ## Segona màquina del sistema: Windows Server 2022
 
